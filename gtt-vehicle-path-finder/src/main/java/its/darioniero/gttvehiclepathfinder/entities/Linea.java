@@ -12,5 +12,5 @@ import lombok.Data;
 public class Linea {
     @Id
     @Column(name = "id_linea")
-    String idLineal;
+    String idLinea;
 }
