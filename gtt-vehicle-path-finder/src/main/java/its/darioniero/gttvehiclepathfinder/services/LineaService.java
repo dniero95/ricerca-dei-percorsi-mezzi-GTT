@@ -39,4 +39,8 @@ public class LineaService {
         return allSelectedLinea;
 
     }
+
+    public void saveManyLinea(List<Linea> linee) {
+        lineaRepository.saveAll(linee);
+    }
 }
