@@ -6,7 +6,6 @@ import its.darioniero.gttvehiclepathfinder.repository.PercorsoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -16,7 +15,7 @@ public class PercorsoService {
     private PercorsoRepository percorsoRepository;
 
     public List<Percorso> findPercorsoByIdFermata(String idFermata) {
-        List<Percorso> byIdIdFermata = percorsoRepository.findByIdIdFermata(idFermata);
+        List<Percorso> byIdIdFermata = percorsoRepository.findByPercorsoIdIdFermata(idFermata);
         return byIdIdFermata;
     }
 

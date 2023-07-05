@@ -14,9 +14,14 @@ public class LineaController {
     @Autowired
     private LineaService lineaService;
 
-    @GetMapping
-    public List<Linea> findLineaBetweenTwoFermata(@PathVariable String firstFermata, @PathVariable String secondFermata){
+    @GetMapping("/between")
+    public List<Linea> findLineaBetweenTwoFermata(@RequestParam("first") String firstFermata, @RequestParam("second") String secondFermata){
         return lineaService.findLineaBetweenTwoFermata(firstFermata, secondFermata);
+    }
+
+    @GetMapping
+    public List<Linea> fetchAllLinea(){
+        return lineaService.fetchAllLinea();
     }
 
     @PostMapping

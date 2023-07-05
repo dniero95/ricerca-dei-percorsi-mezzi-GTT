@@ -1,7 +1,7 @@
 package its.darioniero.gttvehiclepathfinder.services;
 
 import its.darioniero.gttvehiclepathfinder.entities.Linea;
-import its.darioniero.gttvehiclepathfinder.entities.LineaRepository;
+import its.darioniero.gttvehiclepathfinder.repository.LineaRepository;
 import its.darioniero.gttvehiclepathfinder.entities.Percorso;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,5 +42,9 @@ public class LineaService {
 
     public void saveManyLinea(List<Linea> linee) {
         lineaRepository.saveAll(linee);
+    }
+
+    public List<Linea> fetchAllLinea() {
+        return lineaRepository.findAll();
     }
 }
