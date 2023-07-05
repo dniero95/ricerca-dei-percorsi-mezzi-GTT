@@ -15,9 +15,12 @@ public class PercorsoService {
     @Autowired
     private PercorsoRepository percorsoRepository;
 
-    public List<Percorso> findPercorsoByIdFermata(String idFermata){
-        List<Percorso> allPercorso = new ArrayList<>();
+    public List<Percorso> findPercorsoByIdFermata(String idFermata) {
+        List<Percorso> byIdIdFermata = percorsoRepository.findByIdIdFermata(idFermata);
+        return byIdIdFermata;
+    }
 
-        return allPercorso;
+    public void saveAllPercorso(List<Percorso> percorsi) {
+        percorsoRepository.saveAll(percorsi);
     }
 }
