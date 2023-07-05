@@ -23,4 +23,8 @@ public class FermataService {
         }
         return allFermata;
     }
+
+    public void saveManyFermata(List<Fermata> fermate) {
+        fermataRepository.saveAll(fermate);
+    }
 }

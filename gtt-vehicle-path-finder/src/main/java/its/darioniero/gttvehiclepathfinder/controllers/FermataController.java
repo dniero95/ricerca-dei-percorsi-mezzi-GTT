@@ -4,9 +4,7 @@ package its.darioniero.gttvehiclepathfinder.controllers;
 import its.darioniero.gttvehiclepathfinder.entities.Fermata;
 import its.darioniero.gttvehiclepathfinder.services.FermataService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,5 +18,10 @@ public class FermataController {
     @GetMapping
     public List<Fermata> fetchAllFermata() {
         return fermataService.fetchAllFermata();
+    }
+
+    @PostMapping
+    public void saveManyFermata(@RequestBody List<Fermata> fermate){
+        fermataService.saveManyFermata(fermate);
     }
 }
