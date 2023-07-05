@@ -1,4 +1,6 @@
 package its.darioniero.gttvehiclepathfinder.entities;
 
-public interface LineaRepository extends org.springframework.data.jpa.repository.JpaRepository<its.darioniero.gttvehiclepathfinder.entities.Linea, java.lang.String> {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface LineaRepository extends JpaRepository<Linea, String> {
 }
