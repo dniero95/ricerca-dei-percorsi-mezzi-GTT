@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GTT | app</title>
+    <title>GTT app | linee</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -14,7 +14,7 @@
   </head>
   <body>
     <h1>Ricerca dei percorsi mezzi GTT</h1>
-    <form action="" method="get">
+    <form th:action="@{/goto/linee}" method="get">
       <div class="container">
         <select
           id="firstStop"
@@ -32,7 +32,7 @@
           <option selected disabled>Arrivo</option>
        
         </select>
-        <button type="button" class="btn btn-outline-success">Invio</button>
+        <button type="submit" class="btn btn-outline-success">Invio</button>
       </div>
     </form>
     <!-- end of body -->
