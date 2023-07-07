@@ -22,7 +22,7 @@
           aria-label="Default select example"
         >
           <option selected disabled>Partenza</option>
- 
+          <option th:each="fermata : ${fermate}" th:value="${fermata.idFermata}" th:text="${fermata.nomeFermata}"></option>
         </select>
         <select
           id="secondStop"
@@ -30,7 +30,7 @@
           aria-label="Default select example"
         >
           <option selected disabled>Arrivo</option>
-       
+          <option th:each="fermata : ${fermate}" th:value="${fermata.idFermata}" th:text="${fermata.nomeFermata}"></option>
         </select>
         <button type="submit" class="btn btn-outline-success">Invio</button>
       </div>
