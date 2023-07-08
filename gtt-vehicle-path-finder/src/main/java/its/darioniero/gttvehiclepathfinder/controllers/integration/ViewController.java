@@ -24,31 +24,19 @@ public class ViewController {
         return "fermate";
     }
 
-
     @GetMapping("/linee")
-    String getFermate(@RequestParam("firstStop") String firstFermata,
-                      @RequestParam("secondStop") String secondFermata) {
+    public String getFermate(@RequestParam("firstStop") String firstFermata,
+                             @RequestParam("secondStop") String secondFermata,
+                             Model model) {
+        model.addAttribute("firstFermata", firstFermata);
+        model.addAttribute("secondFermata", secondFermata);
         return "linee";
     }
 
     @GetMapping("/goto/linee")
     public RedirectView redirectToLinee(@RequestParam("firstStop") String firstFermata,
-                                     @RequestParam("secondStop") String secondFermata) {
-
+                                        @RequestParam("secondStop") String secondFermata) {
         String url = "/linee?firstStop=" + firstFermata + "&secondStop=" + secondFermata;
-        RedirectView redirectView = new RedirectView(url);
-
-
-        return redirectView;
+        return new RedirectView(url);
     }
-
-//    @GetMapping("/linee")
-//    public RedirectView redirectToLinee(@RequestParam("firstStop") String firstFermata,
-//                                        @RequestParam("secondStop") String secondFermata) {
-//        RedirectView redirectView = new RedirectView("/linee.html");
-//        redirectView.addQueryParameter("firstStop", firstFermata);
-//        redirectView.addQueryParameter("secondStop", secondFermata);
-//        return redirectView;
-//    }
-
 }

@@ -20,6 +20,7 @@
           id="firstStop"
           class="form-select"
           aria-label="Default select example"
+          name="firstStop"
         >
           <option selected disabled>Partenza</option>
           <option th:each="fermata : ${fermate}" th:value="${fermata.idFermata}" th:text="${fermata.nomeFermata}"></option>
@@ -28,6 +29,7 @@
           id="secondStop"
           class="form-select"
           aria-label="Default select example"
+          name="secondStop"
         >
           <option selected disabled>Arrivo</option>
           <option th:each="fermata : ${fermate}" th:value="${fermata.idFermata}" th:text="${fermata.nomeFermata}"></option>
